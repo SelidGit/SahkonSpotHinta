@@ -6,9 +6,17 @@
     xmlns:local="clr-namespace:SahkonSpotHinta"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
+    <TabBar>
+        <ShellContent
+        Title="Spot hinta"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+        <ShellContent
+        Title="Sähkön hinta seuranta"
+        ContentTemplate="{DataTemplate local:SahkonHintaSeuranta}"
+        Route="SahkonHintaSeuranta" />
+
+    </TabBar>
 
 </Shell>
