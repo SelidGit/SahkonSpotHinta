@@ -5,7 +5,7 @@
              Title="Sähkon Hinta Seuranta">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Tänne graafina useamman päivän sähkö ja mitä muuta?"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
