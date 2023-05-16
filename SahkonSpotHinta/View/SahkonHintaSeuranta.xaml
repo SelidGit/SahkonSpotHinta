@@ -2,21 +2,50 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:SahkonSpotHinta.Model"
+             xmlns:viewmodel="clr-namespace:SahkonSpotHinta.ViewModel"
+             x:DataType="viewmodel:PriceViewModel"
              x:Class="SahkonSpotHinta.SahkonHintaSeuranta"
-             Title="Sähkon Hinta Seuranta">
-    <CollectionView>
-        <CollectionView.ItemsSource>
-            <x:Array Type="{x:Type model:Price}"></x:Array>
+             Title="{Binding Title}">
+    <Grid ColumnDefinitions="*,*"
+          ColumnSpacing="5"
+          RowDefinitions="*,Auto"
+          RowSpacing="0">
+        <CollectionView 
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding Prices}"
+            SelectionMode="None"
+            >
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Price">
+                    <Grid Padding="10">
+                        <Frame HeightRequest="125"
+                               Padding="0">
+                            <Grid Padding="0"
+                                  ColumnDefinitions="125, *">
+                                <VerticalStackLayout Grid.Column="1"
+                                                     Padding="10"
+                                                     VerticalOptions="Center">
+                                    <Label Text="{Binding startDate}"/>
+                                    <Label Text="{Binding endDate}"/>
+                                </VerticalStackLayout>
+                                <Label Text="{Binding price}"/>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
             
-        </CollectionView.ItemsSource>
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="model:Price">
-                <HorizontalStackLayout Padding="10" Spacing="4">
-                    <Label Text="{Binding startDate}" FontSize="24"></Label>
-                    <Label Text="{Binding endDate}" FontSize="24"></Label>
-                    <Label Text="{Binding price}" FontSize="24"></Label>
-                </HorizontalStackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+        </CollectionView>
+        <Button Text="Get spot-prices"
+                Command="{Binding GetPricesCommand}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="1"
+                Margin="8"/>
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"/>
+    </Grid>
 </ContentPage>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace SahkonSpotHinta.Services
@@ -27,7 +28,10 @@ namespace SahkonSpotHinta.Services
 
             if (response.IsSuccessStatusCode)
             {
-                priceList = await response.Content.ReadFromJsonAsync<List<Price>>();
+                var jsonString = await response.Content.ReadAsStringAsync();
+                var pricesResponse = JsonSerializer.Deserialize<Root>(jsonString);
+
+                priceList = pricesResponse.prices;
             }
             
 
