@@ -11,10 +11,10 @@
         </CollectionView.ItemsSource>
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="model:Price">
-                <HorizontalStackLayout Padding="10" Spacing="10">
-                    <Label Text="{Binding startDate}"></Label>
-                    <Label Text="{Binding endDate}"></Label>
-                    <Label Text="{Binding price}"></Label>
+                <HorizontalStackLayout Padding="10" Spacing="4">
+                    <Label Text="{Binding startDate}" FontSize="24"></Label>
+                    <Label Text="{Binding endDate}" FontSize="24"></Label>
+                    <Label Text="{Binding price}" FontSize="24"></Label>
                 </HorizontalStackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
