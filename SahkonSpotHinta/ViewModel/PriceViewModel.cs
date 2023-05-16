@@ -1,4 +1,5 @@
-﻿using SahkonSpotHinta.Model;
+﻿using CommunityToolkit.Mvvm.Input;
+using SahkonSpotHinta.Model;
 using SahkonSpotHinta.Services;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,14 @@ namespace SahkonSpotHinta.ViewModel
     {
         PricesService pricesService;
         public ObservableCollection<Price> Prices { get; } = new();
+
         public PriceViewModel(PricesService pricesService) 
         {
             Title = "Sähkön spot-hinnat";
             this.pricesService = pricesService;
+            
         }
-
+        [RelayCommand]
         async Task GetPricesAsync()
         {
             if(IsBusy) return;
