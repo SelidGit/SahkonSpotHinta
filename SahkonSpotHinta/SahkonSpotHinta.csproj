@@ -49,9 +49,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="SahkonHintaSeuranta.xaml">
+	  <MauiXaml Update="View\SahkonHintaSeuranta.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\Settings.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ViewModel\" />
 	</ItemGroup>
 
 </Project>

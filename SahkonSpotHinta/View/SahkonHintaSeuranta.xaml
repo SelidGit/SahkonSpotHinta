@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:SahkonSpotHinta.Model"
+             x:Class="SahkonSpotHinta.SahkonHintaSeuranta"
+             Title="Sähkon Hinta Seuranta">
+    <CollectionView>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type model:Price}"></x:Array>
+            
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="model:Price">
+                <HorizontalStackLayout Padding="10" Spacing="10">
+                    <Label Text="{Binding startDate}"></Label>
+                    <Label Text="{Binding endDate}"></Label>
+                    <Label Text="{Binding price}"></Label>
+                </HorizontalStackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>
