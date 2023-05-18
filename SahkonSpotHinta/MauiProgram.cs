@@ -21,6 +21,8 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<SahkonHintaSeuranta>();
 
+		builder.Services.AddSingleton<SettingsService>();
+
 		return builder.Build();
 	}
 }
