@@ -1,12 +1,51 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:SahkonSpotHinta.Model"
+             xmlns:settings="clr-namespace:SahkonSpotHinta.Services"
              x:Class="SahkonSpotHinta.Settings"
              Title="Settings">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <ContentPage.Resources >
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="LabelStyle">
+                <Setter Property="Text" Value="{AppThemeBinding Light=Light, Dark=Dark}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <VerticalStackLayout
+      Spacing="25"
+      Padding="30,0"
+      Margin="0,50,0,0"
+      VerticalOptions="Start">
+
+            <Label 
+        HorizontalOptions="Center"
+        Style="{DynamicResource LabelStyle}"
+        FontSize="Title"/>
+
+            <HorizontalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+                <Label
+          VerticalOptions="Center"
+          Text="Select Theme: " />
+
+                <!-- Note: We are binding to the SettingsService singleton and the DisplayName of the Theme -->
+
+                <Picker
+            x:DataType="{x:Null}"
+            BindingContext="{Binding Source={x:Static models:Theme.AvailableThemes}}"
+            ItemDisplayBinding="{Binding DisplayName}"
+            ItemsSource="{Binding Source={x:Static models:Theme.AvailableThemes}}"
+            SelectedItem="{Binding Path=Theme, Source={x:Static settings:SettingsService.Instance}}"
+            VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </Grid>
+
 </ContentPage>
+    
