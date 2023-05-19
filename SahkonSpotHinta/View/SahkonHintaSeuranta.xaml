@@ -6,6 +6,14 @@
              x:DataType="viewmodel:PriceViewModel"
              x:Class="SahkonSpotHinta.SahkonHintaSeuranta"
              Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray600}}" />
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <Grid ColumnDefinitions="*,*"
           ColumnSpacing="5"
           RowDefinitions="*,Auto"
@@ -17,8 +25,8 @@
             >
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Price">
-                    <Grid Padding="10">
-                        <Frame HeightRequest="125"
+                    <Grid Padding="5">
+                        <Frame HeightRequest="40"
                                Padding="0">
                             <Grid Padding="0"
                                   ColumnDefinitions="125, *">
@@ -26,9 +34,12 @@
                                                      Padding="10"
                                                      VerticalOptions="Center">
                                     <Label Text="{Binding startDate}"/>
-                                    <Label Text="{Binding endDate}"/>
+                                    <!--Label Text="{Binding endDate}"/-->
                                 </VerticalStackLayout>
-                                <Label Text="{Binding price}"/>
+                                <Label VerticalOptions="Center
+                                       
+                                       Padding="10"
+                                       Text="{Binding price}"/>
                             </Grid>
                         </Frame>
                     </Grid>

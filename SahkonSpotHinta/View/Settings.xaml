@@ -8,13 +8,12 @@
 
     <ContentPage.Resources >
         <ResourceDictionary>
-
             <Style TargetType="Label" x:Key="LabelStyle">
-                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray500}, Dark={StaticResource White}}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
             </Style>
 
             <Style TargetType="Picker">
-                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray500}, Dark={StaticResource White}}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource White}}" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
