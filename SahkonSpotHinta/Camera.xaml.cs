@@ -12,7 +12,7 @@ public partial class Camera : ContentPage
         MainThread.BeginInvokeOnMainThread(async () =>
         {
             //jos on probleemaa samsungien yms muiden kans niin kannattaa kokeilla ensin StopCameraAsync
-            // await cameraView.StopCameraAsync();
+            await cameraView.StopCameraAsync();
             await cameraView.StartCameraAsync();
 
 
@@ -20,6 +20,8 @@ public partial class Camera : ContentPage
     }
     private void Button_Clicked(object sender, EventArgs e)
     {
+        myImage.Source = null; 
         myImage.Source = cameraView.GetSnapShot();
+
     }
 }
