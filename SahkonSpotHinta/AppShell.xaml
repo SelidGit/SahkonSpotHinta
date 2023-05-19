@@ -24,6 +24,12 @@
          Route="Settings"
             />
 
+        <ShellContent
+         Title="Camera"
+         ContentTemplate="{DataTemplate local:Camera}"
+         Route="Camera"
+            />
+
     <!--</TabBar>-->
 
 </Shell>

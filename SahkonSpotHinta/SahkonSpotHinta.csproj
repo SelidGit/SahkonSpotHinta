@@ -49,10 +49,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Camera.MAUI" Version="1.4.1" />
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Camera.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\SahkonHintaSeuranta.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

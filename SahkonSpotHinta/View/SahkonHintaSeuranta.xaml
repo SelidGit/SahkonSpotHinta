@@ -36,8 +36,8 @@
                                     <Label Text="{Binding startDate}"/>
                                     <!--Label Text="{Binding endDate}"/-->
                                 </VerticalStackLayout>
-                                <Label VerticalOptions="Center
-                                       
+                                <Label 
+                                       VerticalTextAlignment="Center"
                                        Padding="10"
                                        Text="{Binding price}"/>
                             </Grid>

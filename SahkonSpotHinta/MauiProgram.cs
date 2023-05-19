@@ -1,4 +1,5 @@
-﻿using SahkonSpotHinta.Services;
+﻿using Camera.MAUI;
+using SahkonSpotHinta.Services;
 using SahkonSpotHinta.ViewModel;
 
 namespace SahkonSpotHinta;
@@ -10,6 +11,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseMauiCameraView()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -23,6 +25,7 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<SettingsService>();
 
-		return builder.Build();
+
+        return builder.Build();
 	}
 }
