@@ -9,6 +9,10 @@
 
             <cv:CameraView x:Name="cameraView" WidthRequest="300" HeightRequest="300" CamerasLoaded="cameraView_CamerasLoaded"/>
 
+            <Button Text="Hymmyile!" Clicked="Button_Clicked"/>
+
+            <Image x:Name="myImage" WidthRequest="200" HeightRequest="200"/>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
