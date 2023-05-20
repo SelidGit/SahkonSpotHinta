@@ -25,6 +25,7 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<SettingsService>();
 
+		builder.Services.AddSingleton<NameViewModel>();
 
         return builder.Build();
 	}

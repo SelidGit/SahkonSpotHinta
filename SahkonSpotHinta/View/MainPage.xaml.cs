@@ -1,4 +1,6 @@
-﻿namespace SahkonSpotHinta;
+﻿using SahkonSpotHinta.ViewModel;
+
+namespace SahkonSpotHinta;
 
 public partial class MainPage : ContentPage
 {
@@ -7,7 +9,9 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
+		BindingContext = new NameViewModel();
 	}
+
 
 	// Alla oleva koodi on .net mauin omaa esimerkkiä. Pidän sen et voi tutustua.
 

@@ -1,25 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SahkonSpotHinta.MainPage">
+             xmlns:viewmodel="clr-namespace:SahkonSpotHinta.ViewModel"
+             x:Class="SahkonSpotHinta.MainPage" 
+             x:DataType="viewmodel:NameViewModel">
 
     <ScrollView>
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
-            VerticalOptions="Center">
-
+            VerticalOptions="StartAndExpand">
+            <Label Text="Anna nimesi:" />
+            <Entry Text="{Binding Name}" x:Name="NameEntry" Placeholder="Anna nimesi!" />
             <Image
                 Source="spot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                SemanticProperties.Description="Thunder and lightning"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Tähän sivulle tämän päivän sähkön hinta"
+                Text="Sähkön hintatiedot puhelimeesi"
                 SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
+                FontSize="22"
                 HorizontalOptions="Center" />
+            <Label Text="Terve:" />
+            <Label Text="{Binding Name}" />
 
 
             <!--<Button
